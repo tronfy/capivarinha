@@ -23,8 +23,6 @@ declare global {
     interface ProcessEnv {
       TOKEN: string
       CLIENT_ID: string
-      OWNER_ID: string
-      MINECRAFT_IP: string
     }
   }
 }
