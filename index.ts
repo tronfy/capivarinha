@@ -10,6 +10,10 @@ import { readdirSync } from 'fs'
 import { join } from 'path'
 config()
 
+client.data = {
+  dataDir: './data',
+}
+
 client.slashCommands = new Collection<string, SlashCommand>()
 
 const handlersDir = join(__dirname, './handlers')
