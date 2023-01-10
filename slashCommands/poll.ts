@@ -23,6 +23,12 @@ const command: SlashCommand = {
         .setDescription('emojis das opções da votação (separados por vírgula)')
         .setRequired(true)
     )
+    .addStringOption(option =>
+      option
+        .setName('descricao')
+        .setDescription('descrição da votação')
+        .setRequired(false)
+    )
     .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers),
   execute: async interaction => {
     const pergunta = interaction.options.data
@@ -43,6 +49,10 @@ const command: SlashCommand = {
         .split(',')
         .map(e => e.trim()) || []
 
+    const descricao = interaction.options.data
+      .find(o => o.name === 'descricao')
+      ?.value?.toString()
+
     if (opcoes.length !== emojis.length) {
       await interaction.reply({
         content: 'erro: o número de opções deve ser igual ao número de emojis',
@@ -55,7 +65,9 @@ const command: SlashCommand = {
       embeds: [
         {
           title: pergunta,
-          description: opcoes.map((e, i) => `${emojis[i]} **${e}**`).join('\n'),
+          description:
+            (descricao ? `${descricao}\n\n` : '') +
+            opcoes.map((e, i) => `${emojis[i]} ${e}`).join('\n'),
         },
       ],
     })

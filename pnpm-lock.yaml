@@ -3,16 +3,16 @@ lockfileVersion: 5.4
 specifiers:
   '@discordjs/rest': ^1.1.0
   '@types/node': ^18.7.14
-  chalk: ^4.1.2
   discord.js: 14.3.0
+  discordjs-reaction-role: ^3.1.0
   dotenv: ^16.0.2
   tslib: ^2.4.1
   typescript: ^4.8.2
 
 dependencies:
   '@discordjs/rest': 1.5.0
-  chalk: 4.1.2
   discord.js: 14.3.0
+  discordjs-reaction-role: 3.1.0_discord.js@14.3.0
   dotenv: 16.0.3
 
 devDependencies:
@@ -89,37 +89,11 @@ packages:
       '@types/node': 18.11.17
     dev: false
 
-  /ansi-styles/4.3.0:
-    resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
-    engines: {node: '>=8'}
-    dependencies:
-      color-convert: 2.0.1
-    dev: false
-
   /busboy/1.6.0:
     resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
     engines: {node: '>=10.16.0'}
     dependencies:
       streamsearch: 1.1.0
-    dev: false
-
-  /chalk/4.1.2:
-    resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
-    engines: {node: '>=10'}
-    dependencies:
-      ansi-styles: 4.3.0
-      supports-color: 7.2.0
-    dev: false
-
-  /color-convert/2.0.1:
-    resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
-    engines: {node: '>=7.0.0'}
-    dependencies:
-      color-name: 1.1.4
-    dev: false
-
-  /color-name/1.1.4:
-    resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: false
 
   /discord-api-types/0.37.24:
@@ -146,6 +120,15 @@ packages:
       - utf-8-validate
     dev: false
 
+  /discordjs-reaction-role/3.1.0_discord.js@14.3.0:
+    resolution: {integrity: sha512-K5ShjKd8h765gZ0llpALveVmDEPKShABWVWnL1zTRmVgFZpMZfnS3ElCPxlxYHUQdB2r4IuqMSB8SW9ai/pLew==}
+    engines: {node: '>=16.6'}
+    peerDependencies:
+      discord.js: ^13.0.0 || ^14.0.0
+    dependencies:
+      discord.js: 14.3.0
+    dev: false
+
   /dotenv/16.0.3:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
@@ -162,11 +145,6 @@ packages:
       readable-web-to-node-stream: 3.0.2
       strtok3: 7.0.0
       token-types: 5.0.1
-    dev: false
-
-  /has-flag/4.0.0:
-    resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
-    engines: {node: '>=8'}
     dev: false
 
   /ieee754/1.2.1:
@@ -227,13 +205,6 @@ packages:
     dependencies:
       '@tokenizer/token': 0.3.0
       peek-readable: 5.0.0
-    dev: false
-
-  /supports-color/7.2.0:
-    resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
-    engines: {node: '>=8'}
-    dependencies:
-      has-flag: 4.0.0
     dev: false
 
   /token-types/5.0.1:
