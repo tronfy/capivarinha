@@ -1,9 +1,4 @@
-import {
-  CollectorFilter,
-  PermissionFlagsBits,
-  SlashCommandBuilder,
-} from 'discord.js'
-import { userInfo } from 'os'
+import { PermissionFlagsBits, SlashCommandBuilder } from 'discord.js'
 import { SlashCommand } from '../types'
 
 const command: SlashCommand = {
@@ -30,6 +25,12 @@ const command: SlashCommand = {
     )
     .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers),
   execute: async interaction => {
+    if (interaction.user.id !== process.env.OWNER_ID)
+      return await interaction.reply({
+        content: 'desculpe! você não tem permissão para usar esse comando.',
+        ephemeral: true,
+      })
+
     const titulo = interaction.options.data
       .find(o => o.name === 'título')
       ?.value?.toString()!
@@ -60,25 +61,8 @@ const command: SlashCommand = {
     const msg = await interaction.fetchReply()
     emojis.forEach(async e => await msg.react(e))
 
-    // TODO: usar um collector para escutar por reações
-    // TODO: adicionar/remover os cargos
-
-    // // msg.awaitReactions({ filter: () => true }).then(collected => {
-    // //   console.log(collected)
-    // // })
-
-    // const collector = msg.createReactionCollector({
-    //   filter: (reaction, user) => true,
-    //   time: 15000,
-    // })
-
-    // collector.on('collect', (reaction, user) => {
-    //   console.log(`Collected ${reaction.emoji.name} from ${user.tag}`)
-    // })
-
-    // collector.on('end', collected => {
-    //   console.log(`Collected ${collected.size} items`)
-    // })
+    // FIXME: isso não configura um collector, o que deve ser feito manualmente
+    // por meio de alterar o rrConfig da Guild. gambiarra a gente aceita, derrota nunca
   },
 }
 

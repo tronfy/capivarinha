@@ -32,6 +32,7 @@ declare global {
     interface ProcessEnv {
       TOKEN: string
       CLIENT_ID: string
+      OWNER_ID: string
       WELCOME_CHANNEL_ID: string
       CONSOLE_CHANNEL_ID: string
       INFRA_ROLE_ID: string
