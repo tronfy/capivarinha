@@ -50,7 +50,6 @@ const command: SlashCommand = {
 
     interaction.reply({
       content: `valeu, **${nickname}**! seu username foi registrado com sucesso.`,
-      ephemeral: true,
     })
   },
 }
