@@ -1,10 +1,10 @@
 import { GuildMember, SlashCommandBuilder } from 'discord.js'
 import { readFileSync, writeFileSync } from 'fs'
-import { GuildData, MinecraftUser, SlashCommand } from '../types'
+import { GuildData, SlashCommand } from '../types'
 
 const command: SlashCommand = {
   command: new SlashCommandBuilder()
-    .setName('username')
+    .setName('mine')
     .setDescription('adiciona seu username à lista do servidor')
     .addStringOption(option =>
       option
